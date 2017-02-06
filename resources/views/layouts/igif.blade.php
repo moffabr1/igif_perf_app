@@ -116,11 +116,11 @@
                                 <ul class="nav nav-third-level">
                                     {{--<li {{ (Request::is('*users') ? 'class="active"' : '') }}>--}}
                                     <li>
-                                        <a href="{{ url ('admin/users') }}">Manage Users</a>
+                                        <a href="{{ url ('igif/admin/users') }}">Manage Users</a>
                                     </li>
                                     {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
                                     <li>
-                                        <a href="{{ url ('admin/users/create' ) }}">Create Users</a>
+                                        <a href="{{ url ('igif/admin/users/create' ) }}">Create Users</a>
                                     </li>
                                 </ul>
                             </li>
@@ -130,10 +130,10 @@
                                 <a href="#">Clubs <span class="fa arrow"></span></a>
                                 <ul class="nav nav-third-level">
                                     <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                        <a href="{{ url ('admin/clubs') }}">Manage Clubs</a>
+                                        <a href="{{ url ('igif/admin/clubs') }}">Manage Clubs</a>
                                     </li>
                                     <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                        <a href="{{ url ('admin/clubs/create' ) }}">Create Club</a>
+                                        <a href="{{ url ('igif/admin/clubs/create' ) }}">Create Club</a>
                                     </li>
                                     {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
                                     {{--<a href="{{ url ('igif/admin/courses') }}">Manage Courses</a>--}}
