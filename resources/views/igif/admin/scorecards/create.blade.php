@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
-@section('page_heading','Admin: Create Scorecard')
-@section('section')
+@extends('layouts.igif')
+@section('page-header','Admin: Create Scorecard')
+@section('page-content')
 
     {!! Form::open(['method'=>'POST', 'action'=> 'AdminScorecardsController@store','files'=>true]) !!}
 

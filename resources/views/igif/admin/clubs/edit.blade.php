@@ -1,6 +1,13 @@
-@extends('layouts.dashboard')
-@section('page_heading','Admin: Edit Golf Club')
-@section('section')
+@extends('layouts.igif')
+@section('page-header','Admin: Edit Golf Club')
+@section('page-content')
+
+
+
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-6">
+
 
     <div class="row">
 
@@ -92,6 +99,9 @@
 
     </div>
 
+</div>
+        </div>
+    </div>
 
 @stop
 

@@ -8,7 +8,7 @@
     @endif
 
     <div class="container">
-        <div class="col-md-10">
+        <div class="col-md-12">
         <table class="table table-striped">
             <thead>
             <tr>
@@ -36,7 +36,7 @@
                 <th>Club Name</th>
                 <th>Holes</th>
                 <th>Address</th>
-                <th>Edit</th>
+                {{--<th>Edit</th>--}}
                 <th>Created</th>
                 <th>Updated</th>
 
@@ -56,11 +56,11 @@
 
                         <td>{{$club->number_of_holes}}</td>
                         <td>{{$club->address}}, {{$club->city_name}}, {{$club->state_province_name}} {{$club->postal_code}}, {{$club->country_name}}</td>
-                        <td>
-                            <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-plus-sign" title="Add New Club"></i></a>
-                            <a href="{{route('clubs.edit', $club->id)}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit" title="Edit Club"></i></a>
+                        {{--<td>--}}
+                            {{--<a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-plus-sign" title="Add New Club"></i></a>--}}
+                            {{--<a href="{{route('clubs.edit', $club->id)}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit" title="Edit Club"></i></a>--}}
 
-                        </td>
+                        {{--</td>--}}
                         <td>{{ ($club->created_at != null) ? $club->created_at->diffForHumans() : "No Date" }}</td>
                         <td>{{ ($club->updated_at != null) ? $club->updated_at->diffForHumans() : "No Date" }}</td>
 

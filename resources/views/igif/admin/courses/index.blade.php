@@ -8,12 +8,12 @@
     @endif
 
     <div class="container">
-        <div class="col-md-10">
+        <div class="col-md-12">
         <table class="table table-striped">
             <thead>
             <tr>
                 <td colspan="2">
-                    <div align="left">
+                    <div>
                         {{--<form action="http://contactmgr.dev/contacts" class="navbar-form navbar-right" role="search">--}}
                         <form action="{{ route("courses.index") }}" class="navbar-form navbar-right" role="search">
                             <div class="input-group">
@@ -35,7 +35,7 @@
                 <th>Course Name</th>
                 <th>Holes</th>
                 <th>Par</th>
-                <th>Edit</th>
+                {{--<th>Edit</th>--}}
                 <th>Created</th>
                 <th>Updated</th>
 
@@ -53,11 +53,11 @@
                         <td><a href="{{route('courses.edit', $course->id)}}">{{$course->course_name}}</a></td>
                         <td>{{$course->holes}}</td>
                         <td>{{$course->par}}</td>
-                        <td>
-                            <a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-plus-sign" title="Add New Course"></i></a>
+                        {{--<td>--}}
+                            {{--<a href="#" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-plus-sign" title="Add New Course"></i></a>--}}
                             {{--<a href="{{route('scorecards.edit', $course->id)}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit" title="Edit Course"></i></a>--}}
 
-                        </td>
+                        {{--</td>--}}
                         <td>{{ ($course->created_at != null) ? $course->created_at->diffForHumans() : "No Date" }}</td>
                         <td>{{ ($course->updated_at != null) ? $course->updated_at->diffForHumans() : "No Date" }}</td>
 
@@ -77,6 +77,18 @@
             {!! $courses->appends( Request::query())->render() !!}
         </nav>
     </div>
+@stop
+@section('footer-scripts')
+    <script>
+        $(function() {
+            $("input[name=term]").autocomplete({
+                source: "{{ route("igif.admin.clubs.autocomplete") }}",
+                minLength: 3,
 
 
+            });
+
+        });
+
+    </script>
 @stop

@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Club;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminClubsController extends Controller
 {
 
-    private $limit = 10;
+    private $limit = 20;
 
     public function autocomplete(Request $request)
     {
@@ -86,7 +87,9 @@ class AdminClubsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $club = Club::findOrFail($id);
+        //$roles = Role::lists('name', 'id')->all();
+        return view('igif.admin.clubs.edit', compact('club'));
     }
 
     /**
@@ -98,7 +101,14 @@ class AdminClubsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $club = Club::findOrFail($id);
+        $club->update($input);
+
+        Session::flash('message', 'The Club has been Updated');
+        Session::flash('message_style', 'bg-success');
+
+        return redirect('/igif/admin/clubs');
     }
 
     /**

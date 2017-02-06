@@ -1,6 +1,6 @@
-@extends('layouts.dashboard')
-@section('page_heading','Admin: Create Golf Course')
-@section('section')
+@extends('layouts.igif')
+@section('page-heading','Admin: Create Golf Course')
+@section('page-content')
 
     <div class="row">
 
